@@ -14,7 +14,6 @@ namespace StarterAssets
 		public bool jump;
 		public bool sprint;
 		public bool draw;
-		public bool sheath;
 		public bool attack;
 
         [Header("Movement Settings")]
@@ -46,9 +45,7 @@ namespace StarterAssets
         public void OnDraw(InputValue value) {
             DrawInput(value.isPressed);
         }
-        public void OnSheath(InputValue value) {
-            SheathInput(value.isPressed);
-        }
+
         public void OnAttack(InputValue value) {
             AttackInput(value.isPressed);
         }
@@ -77,9 +74,7 @@ namespace StarterAssets
         public void DrawInput(bool newDrawState) {
             draw = newDrawState;
         }
-        public void SheathInput(bool newSheathState) {
-            sheath = newSheathState;
-        }
+
         public void AttackInput(bool newAttackState) {
             attack = newAttackState;
         }

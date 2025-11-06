@@ -7,9 +7,10 @@ public class WeaponController : MonoBehaviour {
 
     private StarterAssetsInputs starterAssetsInputs;
     private Animator animator;
-    private const string DRAW_WEAPON = "DrawWeapon";
-    private const string SHEATH_WEAPON = "SheathWeapon";
+    private const string DRAW_SHEATH_WEAPON = "DrawWeapon";
+    private const string ATTACK = "Attack";
 
+    private bool canAttack = false;
     private bool isDrawn = false;
     private bool inAction = false;
 
@@ -20,32 +21,49 @@ public class WeaponController : MonoBehaviour {
 
     private void Update() {
         DrawOrSheathWeapon();
+        OnAttack();
 
         starterAssetsInputs.draw = false;
-        starterAssetsInputs.sheath = false;
+        starterAssetsInputs.attack = false;
     }
+
     private void DrawOrSheathWeapon() {
         if (inAction) {
             return;
         }
-        if (starterAssetsInputs.draw && !isDrawn) {
-            animator.SetBool(DRAW_WEAPON, true);
-            isDrawn = true;
-            inAction = true;
+        if (starterAssetsInputs.draw) {
+            if (!isDrawn) {
+                animator.SetBool(DRAW_SHEATH_WEAPON, true);
+                isDrawn = true;
+                inAction = false;
+            } else {
+                animator.SetBool(DRAW_SHEATH_WEAPON, true);
+                isDrawn = false;
+                inAction = true;
+                canAttack = false;
+            }
         }
-        if (starterAssetsInputs.sheath && isDrawn) {
-            animator.SetBool (SHEATH_WEAPON, true);
-            isDrawn = false;
-            inAction = true;
+    }
+
+
+    private void OnAttack() {
+        if (starterAssetsInputs.attack && canAttack) {
+            animator.SetBool(ATTACK, true);
         }
     }
 
     private void OnDrawFinished() {
-        animator.SetBool(DRAW_WEAPON, false);
+        animator.SetBool(DRAW_SHEATH_WEAPON, false);
         inAction = false;
+        canAttack = true;
     }
     private void OnSheathFinished() {
-        animator.SetBool(SHEATH_WEAPON, false);
+        animator.SetBool(DRAW_SHEATH_WEAPON, false);
         inAction = false;
+    }
+
+    private void OnAttackFinished() {
+        starterAssetsInputs.attack = false;
+        animator.SetBool(ATTACK, false);
     }
 }

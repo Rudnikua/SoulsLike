@@ -52,15 +52,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Sheath",
-                    "type": "Button",
-                    "id": "6332c59e-f779-40d5-b727-3ada0770d15a",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Attack",
                     "type": "Button",
                     "id": "d49b142b-efce-43cd-a604-664b7bfeae02",
@@ -266,28 +257,6 @@
                     "processors": "",
                     "groups": ";Gamepad",
                     "action": "Draw",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b5b53dc2-7412-40a3-8195-5baea1d29081",
-                    "path": "<Keyboard>/t",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";KeyboardMouse",
-                    "action": "Sheath",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "141fef8d-c49b-4c24-b1ab-b0d1b2cc34c8",
-                    "path": "<Gamepad>/buttonNorth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Gamepad",
-                    "action": "Sheath",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
