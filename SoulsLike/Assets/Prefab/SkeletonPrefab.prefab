@@ -213,6 +213,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8454315606436904}
   - component: {fileID: 3500665298649651605}
+  - component: {fileID: 6414637263363381778}
   m_Layer: 0
   m_Name: SkeletonPrefab
   m_TagString: Untagged
@@ -258,6 +259,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6414637263363381778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088200085457064191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff29632ae694d8f4fa08308132bf9987, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  health: 100
+  attackCD: 3
+  attackRange: 1
+  aggroRange: 4
+  player: {fileID: 0}
 --- !u!1 &1548867426703317724
 GameObject:
   m_ObjectHideFlags: 0
