@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: LongSword
   m_EditorClassIdentifier: Assembly-CSharp::WeaponSO
   weaponName: Long Sword
-  weaponModelPrefab: {fileID: 4557870605383864691, guid: fea8bf02228595f4ebda693c8f226ff8, type: 3}
+  weaponModelPrefab: {fileID: 421201441609256308, guid: dd8b960db5a7a3642b27ea025f6a4361, type: 3}
   damage: 25

@@ -22,4 +22,8 @@ public class EquipmentSystem : MonoBehaviour {
         currentWeaponInSheath = Instantiate(weapon, weaponSheath.transform);
         Destroy(currentWeaponInHand);
     }
+
+    public GameObject GetCurrentWeaponInHand() {
+        return currentWeaponInHand;
+    }
 }

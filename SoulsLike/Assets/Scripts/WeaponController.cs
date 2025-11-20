@@ -1,12 +1,15 @@
-using Mono.Cecil.Cil;
 using StarterAssets;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class WeaponController : MonoBehaviour {
 
+    [SerializeField] private WeaponSO currentWeapon;
+
+    private EquipmentSystem equipmentSystem;
     private StarterAssetsInputs starterAssetsInputs;
     private Animator animator;
+    private BoxCollider longSwordCollider;
+
     private const string DRAW_SHEATH_WEAPON = "DrawWeapon";
     private const string ATTACK = "Attack";
 
@@ -15,8 +18,9 @@ public class WeaponController : MonoBehaviour {
     private bool inAction = false;
 
     private void Awake() {
+        equipmentSystem = GetComponent<EquipmentSystem>();
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
-        animator = GetComponent<Animator>();    
+        animator = GetComponent<Animator>();
     }
 
     private void Update() {
@@ -65,5 +69,18 @@ public class WeaponController : MonoBehaviour {
     private void OnAttackFinished() {
         starterAssetsInputs.attack = false;
         animator.SetBool(ATTACK, false);
+    }
+    public void EnableSwordCollider() {
+        if (equipmentSystem.GetCurrentWeaponInHand() != null) {
+            equipmentSystem.GetCurrentWeaponInHand().GetComponent<BoxCollider>().enabled = true;
+            Debug.Log("Collider is enabled");
+        }
+    }
+
+    public void DisableSwordCollider() {
+        if (equipmentSystem.GetCurrentWeaponInHand() != null) {
+            equipmentSystem.GetCurrentWeaponInHand().GetComponent<BoxCollider>().enabled = false;
+            Debug.Log("Collider is disabled");
+        }
     }
 }
