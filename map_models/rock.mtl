@@ -1,0 +1,14 @@
+# Blender 4.5.3 LTS MTL File: 'rock.blend'
+# www.blender.org
+
+newmtl M_LittleRock_01
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:/T_LittleRock_01_GreenMoss_BaseColor.jpg
+map_Ns C:/T_LittleRock_01_GreenMoss_Roughness.jpg
+map_refl C:/T_LittleRock_01_GreenMoss_Metallic.jpg
+map_Bump -bm 1.000000 C:/T_LittleRock_01_GreenMoss_NormalOpenGL.jpg
